@@ -1,0 +1,41 @@
+{
+    "name": "drnkwati/repack-events",
+    "description": "PHP 5.3 Events package.",
+    "license": "MIT",
+    "authors": [
+    {
+        "name": "Taylor Otwell",
+        "email": "taylor@laravel.com"
+    },
+    {
+        "name": "Divine Nkwati",
+        "email": "drnkwati@gmail.com"
+    }],
+    "require":
+    {
+        "php": ">=5.3"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Repack\\Events\\": "src"
+        }
+    },
+    "suggest":
+    {
+        "illuminate/container": "Required for resolving dependencies. You can use any ArrayAccess DI container."
+    },
+    "extra":
+    {
+        "branch-alias":
+        {
+            "dev-master": "5.8-dev"
+        }
+    },
+    "config":
+    {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
