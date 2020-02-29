@@ -1,22 +1,13 @@
 <?php
-
 namespace Repack\Events;
 
-use ArrayAccess;
 use Exception;
+use ArrayAccess;
 use ReflectionClass;
-
-if (interface_exists('\Illuminate\Contracts\Events\Dispatcher')) {
-    interface DispatcherContract extends \Illuminate\Contracts\Events\Dispatcher
-    {}
-} else {
-    interface DispatcherContract
-    {}
-}
 
 // $events = new Dispatcher(new \Illuminate\Container\Container);
 
-class Dispatcher implements DispatcherContract
+class Dispatcher
 {
     /**
      * The IoC container instance.
@@ -316,8 +307,8 @@ class Dispatcher implements DispatcherContract
         );
 
         return class_exists($eventName, false)
-        ? $this->addInterfaceListeners($eventName, $listeners)
-        : $listeners;
+            ? $this->addInterfaceListeners($eventName, $listeners)
+            : $listeners;
     }
 
     /**
@@ -501,8 +492,8 @@ class Dispatcher implements DispatcherContract
         $queue = isset($listener->queue) ? $listener->queue : null;
 
         isset($listener->delay)
-        ? $connection->laterOn($queue, $listener->delay, $job)
-        : $connection->pushOn($queue, $job);
+            ? $connection->laterOn($queue, $listener->delay, $job)
+            : $connection->pushOn($queue, $job);
     }
 
     /**
